@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 44 30% 95%;
+    --foreground: 30 10% 15%;
+    --card: 40 30% 98%;
+    --card-foreground: 30 10% 15%;
+    --popover: 40 30% 98%;
+    --popover-foreground: 30 10% 15%;
+    --primary: 36 100% 50%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 15 60% 30%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 30 10% 92%;
+    --muted-foreground: 30 10% 45%;
+    --accent: 162 48% 30%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 30 10% 85%;
+    --input: 30 10% 85%;
+    --ring: 30 10% 50%;
+    --chart-1: 36 100% 50%;    /* Burnt Orange */
+    --chart-2: 162 48% 30%;    /* Dark Forest Green */
+    --chart-3: 30 40% 35%;     /* Deep Brown */
+    --chart-4: 15 60% 30%;     /* Rust */
+    --chart-5: 28 87% 62%;     /* Amber */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 30 15% 10%;
+    --foreground: 40 30% 90%;
+    --card: 30 15% 13%;
+    --card-foreground: 40 30% 90%;
+    --popover: 30 15% 13%;
+    --popover-foreground: 40 30% 90%;
+    --primary: 36 100% 50%;
+    --primary-foreground: 30 15% 10%;
+    --secondary: 15 60% 30%;
+    --secondary-foreground: 40 30% 90%;
+    --muted: 30 15% 20%;
+    --muted-foreground: 30 10% 60%;
+    --accent: 162 48% 25%;
+    --accent-foreground: 40 30% 90%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 40 30% 90%;
+    --border: 30 15% 25%;
+    --input: 30 15% 25%;
+    --ring: 36 100% 50%;
+    --chart-1: 36 100% 50%;    /* Burnt Orange */
+    --chart-2: 162 48% 30%;    /* Dark Forest Green */
+    --chart-3: 30 40% 35%;     /* Deep Brown */
+    --chart-4: 15 60% 30%;     /* Rust */
+    --chart-5: 28 87% 62%;     /* Amber */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom Fonts */
+@font-face {
+  font-family: 'Clarendon';
+  src: url('https://fonts.cdnfonts.com/css/clarendon-text-pro');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-serif {
+  font-family: 'Clarendon', Georgia, serif;
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Vintage Paper Background */
+.vintage-paper {
+  background-color: #f5f0e6;
+  background-image: 
+    linear-gradient(rgba(245, 240, 230, 0.8) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(245, 240, 230, 0.8) 2px, transparent 2px),
+    linear-gradient(rgba(245, 240, 230, 0.9), rgba(245, 240, 230, 0.9)),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-size: 30px 30px, 30px 30px, cover, cover;
+  background-position: -1px -1px, -1px -1px, 0 0, 0 0;
+  background-repeat: repeat, repeat, repeat, repeat;
+}
