@@ -1,6 +1,7 @@
 import { cars, categories, brands } from "@/data/cars";
 import { CarCard } from "@/components/car/car-card";
 import { FilterSidebar } from "@/components/car/filter-sidebar";
+export const dynamic = "force-dynamic";
 
 interface CarsPageProps {
   searchParams: {
