@@ -83,9 +83,9 @@ export function BookingForm({ car }: BookingFormProps) {
     }
   }, [watchStartDate, watchEndDate, car.pricePerDay]);
 
-  const nextStep = () => {
+  const nextStep = async () => {
     if (step === 1) {
-      const startDateResult = form.trigger(["startDate", "endDate"]);
+      const startDateResult = await form.trigger(["startDate", "endDate"]);
       if (startDateResult) {
         setStep(2);
       }
